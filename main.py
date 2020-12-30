@@ -35,12 +35,12 @@ total_money = f"${money}"
 
 user_choice = input("What would you like? (Espresso, Latte, or Cappuccino)")
 
-if user_choice == "report":
-    print(resources["water"])
-    print(resources["milk"] )
-    print(resources["coffee"] ) 
-    print(total_money)
-elif user_choice == "Espresso":
+# if user_choice == "report":
+#     print(resources["water"])
+#     print(resources["milk"] )
+#     print(resources["coffee"] ) 
+#     print(total_money)
+if user_choice == "Espresso":
     print("Cost is: 1.5")
     cost = 1.5
     print("Please insert coints")
@@ -60,8 +60,12 @@ elif user_choice == "Espresso":
     else:
         change = total_paid - cost
         print(f"Thanks for your purchase! Here is your change: {change}")
-
-
+    total_money += cost #Have to get this to work
+elif user_choice == "report":
+    print(resources["water"])
+    print(resources["milk"] )
+    print(resources["coffee"] ) 
+    print(total_money)
 
 
 
