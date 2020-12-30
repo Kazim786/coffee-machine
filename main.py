@@ -40,15 +40,33 @@ if user_choice == "report":
     print(resources["milk"] )
     print(resources["coffee"] ) 
     print(total_money)
+elif user_choice == "Espresso":
+    print("Cost is: 1.5")
+    cost = 1.5
+    print("Please insert coints")
+    num_quarters = int(input("How many quarters?"))
+    num_dimes = int(input("How many dimes?"))
+    num_nickels = int(input("How many nickels?"))
+    num_pennies = int(input("How many pennies?"))
+    quarters = num_quarters * .25
+    dimes = num_dimes * .10
+    nickels = num_nickels * .05
+    pennies = num_pennies * .01
+    total_paid = quarters + dimes + nickels + pennies 
+    if total_paid < cost:
+        print("Sorry that is not enough money. Your payment is refunded")
+    elif total_paid == cost:
+        print("You paid the exact amount! Thank you!")
+    else:
+        change = total_paid - cost
+        print(f"Thanks for your purchase! Here is your change: {change}")
 
 
 
-print("Please insert coints")
 
-quarters = input("How many quarters?")
-dimes = input("How many dimes?")
-nickels = input("How many nickels?")
-pennies = input("How many pennies?")
+
+
+
 
 
 
