@@ -57,10 +57,15 @@ if user_choice == "Espresso":
         print("Sorry that is not enough money. Your payment is refunded")
     elif total_paid == cost:
         print("You paid the exact amount! Thank you!")
+        # total_money += cost
+        resources["water"] = resources["water"] - 50
+        resources["coffee"] = resources["coffee"] - 18
     else:
         change = total_paid - cost
         print(f"Thanks for your purchase! Here is your change: {change}")
-    total_money += cost #Have to get this to work
+        resources["water"] = resources["water"] - 50 #Report isnt updating the inventory
+        resources["coffee"] = resources["coffee"] - 18
+        # total_money += cost #Have to get this to work
 elif user_choice == "report":
     print(resources["water"])
     print(resources["milk"] )
