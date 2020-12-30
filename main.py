@@ -36,6 +36,17 @@ total_money = f"${money}"
 # print(resources["water"])
 user_choice = input("What would you like? (Espresso, Latte, or Cappuccino)")
 
+
+# def total (c, total-mon):
+#     return total-mon = total-mon + c 
+
+def total(c, t = 0):
+    return t + c
+
+
+
+
+
 # if user_choice == "report":
 #     print(resources["water"])
 #     print(resources["milk"] )
@@ -59,6 +70,7 @@ if user_choice == "Espresso":
     elif total_paid == cost:
         print("You paid the exact amount! Thank you!")
         # total_money += cost #Have to get this to work
+        total_money = total(total_money, cost)
         resources["water"] = resources["water"] - 50 #Report isnt updating the inventory
         resources["coffee"] = resources["coffee"] - 18
     else:
@@ -67,6 +79,7 @@ if user_choice == "Espresso":
         resources["water"] = resources["water"] - 50 #Report isnt updating the inventory
         resources["coffee"] = resources["coffee"] - 18
         # total_money += cost #Have to get this to work
+        total_money = total(total_money, cost)
 elif user_choice == "report":
     print(resources["water"])
     print(resources["milk"] )
