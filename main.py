@@ -30,3 +30,25 @@ resources = {
     "coffee": 100,
 }
 
+money = 0
+total_money = f"${money}"
+
+user_choice = input("What would you like? (Espresso, Latte, or Cappuccino)")
+
+if user_choice == "report":
+    print(resources["water"])
+    print(resources["milk"] )
+    print(resources["coffee"] ) 
+    print(total_money)
+
+
+
+print("Please insert coints")
+
+quarters = input("How many quarters?")
+dimes = input("How many dimes?")
+nickels = input("How many nickels?")
+pennies = input("How many pennies?")
+
+
+
