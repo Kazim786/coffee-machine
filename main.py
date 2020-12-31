@@ -152,7 +152,10 @@ while is_on:
         if resources["water"] < 50:
             print("There is not enough water")
         elif resources["coffee"] < 18:
-            print("There is not enough Coffee") 
+            print("There is not enough Coffee")
+        else:
+            resources["water"] =   resources["water"] - MENU["espresso"]["ingredients"]["water"]
+            resources["coffee"] =   resources["coffee"] - MENU["espresso"]["ingredients"]["coffee"]
     elif choice == "latte":
         if resources["water"] < 200:
             print("There is not enough water")
