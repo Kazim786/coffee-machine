@@ -161,7 +161,7 @@ while is_on:
         is_on = False 
     elif choice == "report":
         for items in resources:
-            print(f" {items} : {resources[items]}")
+            print(f" {items} : {resources[items]} \n Money: {money}")
 
 #Time to check if resources are sufficient
     elif choice == "espresso":
@@ -193,21 +193,21 @@ while is_on:
                 nickels = num_nickels * .05
                 pennies = num_pennies * .01
                 total_paid = quarters + dimes + nickels + pennies 
-            if total_paid < MENU["latte"]["cost"]:
-                print("Your money is refunded. You dont have enough")
-            elif total_paid == MENU["latte"]["cost"]:
-                print("You have no change, you paid exact amount!")
-                resources["water"] =   resources["water"] - MENU["latte"]["ingredients"]["water"]
-                resources["coffee"] =   resources["coffee"] - MENU["latte"]["ingredients"]["coffee"]
-                resources["milk"] =   resources["milk"] - MENU["latte"]["ingredients"]["milk"]
-                money+= cost
-            elif total_paid > MENU["latte"]["cost"]:
-                change = total_paid - MENU["latte"]["cost"]
-                print(f"Your change is: {change} ")
-                resources["water"] =   resources["water"] - MENU["latte"]["ingredients"]["water"]
-                resources["coffee"] =   resources["coffee"] - MENU["latte"]["ingredients"]["coffee"]
-                resources["milk"] =   resources["milk"] - MENU["latte"]["ingredients"]["milk"]
-                money += cost
+                if total_paid < MENU["latte"]["cost"]:
+                    print("Your money is refunded. You dont have enough")
+                elif total_paid == MENU["latte"]["cost"]:
+                    print("You have no change, you paid exact amount!")
+                    resources["water"] =   resources["water"] - MENU["latte"]["ingredients"]["water"]
+                    resources["coffee"] =   resources["coffee"] - MENU["latte"]["ingredients"]["coffee"]
+                    resources["milk"] =   resources["milk"] - MENU["latte"]["ingredients"]["milk"]
+                    money+= MENU["latte"]["cost"]
+                elif total_paid > MENU["latte"]["cost"]:
+                    change = total_paid - MENU["latte"]["cost"]
+                    print(f"Your change is: {change} ")
+                    resources["water"] =   resources["water"] - MENU["latte"]["ingredients"]["water"]
+                    resources["coffee"] =   resources["coffee"] - MENU["latte"]["ingredients"]["coffee"]
+                    resources["milk"] =   resources["milk"] - MENU["latte"]["ingredients"]["milk"]
+                    money += MENU["latte"]["cost"]
 
     elif choice == "cappuccino":
         if resources["water"] < 250:
