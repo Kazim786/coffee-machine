@@ -27,20 +27,24 @@ MENU = {
 resources = {
     "water": 300,
     "milk": 200,
-    "coffee": 100,
+    "coffee": 100
 }
 
 money = 0
-total_money = f"${money}"
+total_money = money #Might have to uncomment
 # resources["water"] = resources["water"] - 1
 # print(resources["water"])
-user_choice = input("What would you like? (Espresso, Latte, or Cappuccino)")
+
+while True: 
+    user_choice = input("What would you like? (Espresso, Latte, or Cappuccino)")
 
 
 # def total (c, total-mon):
 #     return total-mon = total-mon + c 
 
 def total(c, t = 0):
+    t = float(t)
+    c = float(c)
     return t + c
 
 
@@ -69,17 +73,21 @@ if user_choice == "Espresso":
         print("Sorry that is not enough money. Your payment is refunded")
     elif total_paid == cost:
         print("You paid the exact amount! Thank you!")
-        # total_money += cost #Have to get this to work
-        total_money = total(total_money, cost)
+        # global total_money
+        total_money += cost #Have to get this to work
+        # resources["total_money"] = total(resources["total_money"], cost)
+        #print(f"{resources['total_money']} test if cost payment is equal")
         resources["water"] = resources["water"] - 50 #Report isnt updating the inventory
         resources["coffee"] = resources["coffee"] - 18
     else:
-        change = total_paid - cost
+        change = round(total_paid - cost)
         print(f"Thanks for your purchase! Here is your change: {change}")
         resources["water"] = resources["water"] - 50 #Report isnt updating the inventory
         resources["coffee"] = resources["coffee"] - 18
-        # total_money += cost #Have to get this to work
-        total_money = total(total_money, cost)
+        # global total_money
+        total_money += cost #Have to get this to work
+        # resources['total_money'] = total(resources["total_money"], cost)
+        # print(resources["total_money"]) #So money is being updated to 1.5
 elif user_choice == "report":
     print(resources["water"])
     print(resources["milk"] )
