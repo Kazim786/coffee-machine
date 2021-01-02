@@ -97,7 +97,7 @@
 
 
 
-#Angela's work:
+#Redoing the  work:
 
 MENU = {
     "espresso": {
